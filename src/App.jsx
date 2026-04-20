@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import TheSpace from './components/TheSpace';
 import Offerings from './components/Offerings';
 import WhatsAppButton from './components/WhatsAppButton';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <Chatbot />
     </div>
   );
 }
