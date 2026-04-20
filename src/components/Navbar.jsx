@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -7,20 +7,17 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Inicio', href: '#' },
-        { name: 'Cursos', href: '#servicios' },
-        { name: 'Metodología', href: '#metodologia' },
-        { name: 'Contacto', href: '#contacto' },
+        { name: 'Solución', href: '#solucion' },
+        { name: 'Beneficios', href: '#beneficios' },
+        { name: 'Cursos', href: '#cursos' },
     ];
 
     return (
-        <nav className="fixed w-full z-50 top-0 left-0 px-4 py-3">
-            <div className="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
+        <nav className="fixed w-full z-50 top-0 left-0 bg-white/70 backdrop-blur-md border-b border-gray-200/50 shadow-sm transition-all duration-300">
+            <div className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center gap-2">
-                    <Sparkles className="text-primary w-8 h-8" />
-                    <span className="text-2xl font-heading font-bold text-gray-800">
-                        Chispeando<span className="text-primary">Ideas</span>
-                    </span>
+                    <img src="/logotipo.png" alt="Chispeando Ideas Logo" className="h-10 w-auto" />
                 </div>
 
                 {/* Desktop Menu */}
@@ -34,9 +31,9 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
-                    <button className="bg-primary hover:bg-orange-600 text-white px-6 py-2 rounded-full font-bold shadow-lg transform hover:scale-105 transition-all">
+                    <a href="https://wa.me/529994519579" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-yellow-500 text-white px-6 py-2 rounded-full font-bold shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all inline-block text-center">
                         Inscribir a mi hijo
-                    </button>
+                    </a>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -52,24 +49,26 @@ const Navbar = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-20 left-4 right-4 glass rounded-2xl p-6 md:hidden flex flex-col gap-4 shadow-xl"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden bg-white border-t border-gray-100 shadow-xl overflow-hidden"
                     >
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-gray-700 font-medium text-lg text-center py-2 hover:bg-orange-50 rounded-lg"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {link.name}
+                        <div className="flex flex-col p-6 gap-4">
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-gray-700 font-medium text-lg text-center py-2 hover:bg-orange-50 rounded-lg"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                            <a href="https://wa.me/529994519579" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-yellow-500 text-white w-full py-3 rounded-xl font-bold shadow-md text-center block" onClick={() => setIsOpen(false)}>
+                                Inscribir a mi hijo
                             </a>
-                        ))}
-                        <button className="bg-primary text-white w-full py-3 rounded-xl font-bold shadow-md">
-                            Inscribir a mi hijo
-                        </button>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

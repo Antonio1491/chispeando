@@ -1,82 +1,70 @@
 import React from 'react';
-import { Facebook, Instagram, MessageCircle, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white pt-16 pb-8 relative" id="contacto">
-            <div className="max-w-7xl mx-auto px-4">
-                <div className="grid md:grid-cols-4 gap-12 mb-12">
-                    {/* Brand */}
+        <footer className="bg-primary-dark text-white pt-16 pb-8 px-6">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                     <div className="col-span-1 md:col-span-2">
-                        <div className="flex items-center gap-2 mb-4">
-                            <Sparkles className="text-primary w-6 h-6" />
-                            <span className="text-xl font-heading font-bold">
-                                Chispeando<span className="text-primary">Ideas</span>
+                        <div className="flex items-center gap-2 mb-6">
+                            <span className="text-3xl font-heading font-bold text-white">
+                                Chispeando<span className="text-accent">Ideas</span>
                             </span>
                         </div>
-                        <p className="text-gray-400 max-w-sm">
-                            Despertando la curiosidad científica en la próxima generación de innovadores.
+                        <p className="text-gray-300 max-w-sm mb-6">
+                            Escuela extracurricular de ciencia y tecnología. Formando a los próximos líderes, innovadores y creadores de México.
                         </p>
+                        <div className="flex gap-4">
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary-dark transition-colors">
+                                <Facebook size={20} />
+                            </a>
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary-dark transition-colors">
+                                <Instagram size={20} />
+                            </a>
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary-dark transition-colors">
+                                <Twitter size={20} />
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Links */}
                     <div>
-                        <h4 className="font-bold text-lg mb-4">Enlaces Rápidos</h4>
-                        <ul className="space-y-2 text-gray-400">
-                            <li><a href="#" className="hover:text-primary transition-colors">Inicio</a></li>
-                            <li><a href="#servicios" className="hover:text-primary transition-colors">Servicios</a></li>
-                            <li><a href="#metodologia" className="hover:text-primary transition-colors">Metodología</a></li>
+                        <h4 className="text-xl font-bold mb-6">Enlaces Rápidos</h4>
+                        <ul className="space-y-4">
+                            <li><a href="#" className="text-gray-300 hover:text-accent transition-colors">Inicio</a></li>
+                            <li><a href="#solucion" className="text-gray-300 hover:text-accent transition-colors">Nuestra Metodología</a></li>
+                            <li><a href="#cursos" className="text-gray-300 hover:text-accent transition-colors">Cursos STEAM</a></li>
+                            <li><a href="#beneficios" className="text-gray-300 hover:text-accent transition-colors">Beneficios</a></li>
                         </ul>
                     </div>
 
-                    {/* Social */}
                     <div>
-                        <h4 className="font-bold text-lg mb-4">Síguenos</h4>
-                        <div className="flex gap-4">
-                            <a href="#" className="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary transition-colors">
-                                <Facebook size={20} />
-                            </a>
-                            <a href="#" className="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary transition-colors">
-                                <Instagram size={20} />
-                            </a>
-                            <a href="#" className="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary transition-colors">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v4a9 9 0 0 1-9-9Z" />
-                                </svg>
-                            </a>
-                        </div>
+                        <h4 className="text-xl font-bold mb-6">Contacto</h4>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3 text-gray-300">
+                                <MapPin size={20} className="text-accent shrink-0 mt-1" />
+                                <span>Mérida, Yucatán, México</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-gray-300">
+                                <Phone size={20} className="text-accent shrink-0" />
+                                <span>999 451 9579</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-gray-300">
+                                <Mail size={20} className="text-accent shrink-0" />
+                                <span>hola@chispeandoideas.mx</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-gray-400 text-sm">
                     <p>&copy; {new Date().getFullYear()} Chispeando Ideas. Todos los derechos reservados.</p>
+                    <div className="flex gap-4">
+                        <a href="#" className="hover:text-white transition-colors">Aviso de Privacidad</a>
+                        <a href="#" className="hover:text-white transition-colors">Términos de Servicio</a>
+                    </div>
                 </div>
             </div>
-
-            {/* Floating Action Button (FAB) */}
-            <motion.a
-                href="https://wa.me/NUMERO?text=Hola,%20quiero%20que%20mi%20hijo%20descubra%20la%20ciencia"
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1, type: 'spring' }}
-                className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 z-50 font-bold transform hover:scale-105 transition-all"
-            >
-                <MessageCircle size={24} />
-                <span>¡Hola! Quiero info 💬</span>
-            </motion.a>
         </footer>
     );
 };

@@ -7,14 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FF8C00', // Vibrant Orange
-        secondary: '#007BFF', // Science Blue
+        primary: '#5A2C8A', // Púrpura principal
+        'primary-dark': '#4F207D', // Púrpura oscuro
+        accent: '#FFB800', // Naranja/Amarillo de acento
+        'bg-main': '#FDFBF8', // Fondo general
         'glass-white': 'rgba(255, 255, 255, 0.8)',
         'glass-border': 'rgba(255, 255, 255, 0.3)',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Nunito', 'sans-serif'],
+        sans: ['Nunito', 'sans-serif'],
+        heading: ['Fredoka', 'sans-serif'],
       },
     },
   },
