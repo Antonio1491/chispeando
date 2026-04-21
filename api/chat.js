@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { clubKnowledge } from "./knowledge.js";
 
 export default async function handler(req, res) {
   // Solo permitimos peticiones POST
@@ -13,8 +14,8 @@ export default async function handler(req, res) {
     // process.env.GEMINI_API_KEY será tu llave secreta.
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     
-    // Usamos 'gemini-1.5-flash', el modelo rápido, económico/gratuito y perfecto para texto.
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    // Usamos 'gemini-2.5-flash', el modelo rápido, económico/gratuito y perfecto para texto.
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // El System Prompt define la "personalidad" y los límites de tu asistente.
     const systemInstruction = `
@@ -26,6 +27,9 @@ export default async function handler(req, res) {
       NUNCA salgas de tu personaje ni respondas preguntas que no sean relacionadas 
       a la educación STEAM, pedagogía o información de la academia. 
       Sé breve (máximo un párrafo corto). ¡Sé encantador!
+
+      --- ESTA ES LA BASE DE CONOCIMIENTO SOBRE LA ACADEMIA: ---
+      ${clubKnowledge}
     `;
 
     // Combinamos las instrucciones del sistema con el mensaje del padre
