@@ -1,15 +1,14 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ProblemSolution from './components/ProblemSolution';
+import StatsBar from './components/StatsBar';
 import Benefits from './components/Benefits';
-import Services from './components/Services';
+import Offerings from './components/Offerings';
+import WhyChooseUs from './components/WhyChooseUs';
+import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
-import FounderBio from './components/FounderBio';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
-import TheSpace from './components/TheSpace';
-import Offerings from './components/Offerings';
 import WhatsAppButton from './components/WhatsAppButton';
 import Chatbot from './components/Chatbot';
 
@@ -19,13 +18,12 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <ProblemSolution />
+        <StatsBar />
         <Benefits />
         <Offerings />
-        <Services />
-        <TheSpace />
+        <WhyChooseUs />
+        <Gallery />
         <Testimonials />
-        <FounderBio />
         <FinalCTA />
       </main>
       <Footer />

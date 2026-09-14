@@ -42,14 +42,14 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans">
+    <div className="fixed bottom-24 right-6 z-50 font-sans">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="mb-4 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] w-[90vw] sm:w-[360px] overflow-hidden flex flex-col h-[500px]"
+            className="mb-4 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] w-[90vw] sm:w-[360px] overflow-hidden flex flex-col h-[min(500px,70vh)]"
           >
             {/* Cabecera bonita (Gradient) */}
             <div className="bg-gradient-to-r from-orange-500 to-orange-400 p-4 text-white flex justify-between items-center shadow-sm z-10">

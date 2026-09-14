@@ -1,53 +1,78 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Atom, Hand, Rocket } from 'lucide-react';
+import { Users, Sun, Hand, Cpu } from 'lucide-react';
+import MediaPlaceholder from './MediaPlaceholder';
+import fotoFamilia from '../assets/imagenes/equipo.webp';
 
 const Benefits = () => {
-    const cards = [
-        {
-            icon: <Atom size={48} className="text-primary mb-4" />,
-            title: "Enfoque STEAM",
-            description: "Ciencia, Tecnología, Ingeniería, Arte y Matemáticas integrados en cada aventura."
-        },
-        {
-            icon: <Hand size={48} className="text-accent mb-4" />,
-            title: "Aprendizaje Práctico",
-            description: "Prohibido aburrirse. Aquí ensuciarse las manos es un requisito indispensable."
-        },
-        {
-            icon: <Rocket size={48} className="text-primary-dark mb-4" />,
-            title: "Preparación para el Futuro",
-            description: "Habilidades en robótica e Inteligencia Artificial que les darán una verdadera ventaja competitiva en el mundo del mañana."
-        }
+    const perks = [
+        { icon: Users, label: 'Grupos reducidos' },
+        { icon: Sun, label: 'Aire libre' },
+        { icon: Hand, label: 'Aprendizaje práctico' },
+        { icon: Cpu, label: 'Tecnología real' },
     ];
 
     return (
-        <section id="beneficios" className="py-20 bg-bg-main">
+        <section id="cada-nino" className="py-20 bg-bg-main">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold font-heading text-primary-dark mb-4">
-                        ¿Por qué Chispeando Ideas?
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Diseñamos experiencias que despiertan la curiosidad natural de los niños.
-                    </p>
-                </div>
+                <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                    {/* Texto */}
+                    <div className="w-full md:w-1/2">
+                        <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary-dark mb-4">
+                            Cada niño es <span className="text-primary">único y especial</span>
+                        </h2>
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Diseñamos experiencias que despiertan la curiosidad natural de cada niño, a su propio ritmo.
+                        </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {cards.map((card, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2 }}
-                            className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-t-0 hover:border-t-4 hover:border-t-accent"
-                        >
-                            {card.icon}
-                            <h3 className="text-2xl font-bold text-gray-800 mb-4">{card.title}</h3>
-                            <p className="text-gray-600">{card.description}</p>
-                        </motion.div>
-                    ))}
+                        <div className="grid grid-cols-2 gap-4 mb-8">
+                            {perks.map(({ icon: Icon, label }) => (
+                                <motion.div
+                                    key={label}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className="flex items-center gap-3 bg-white rounded-2xl p-4 shadow-sm border border-gray-100"
+                                >
+                                    <div className="bg-science/15 text-science rounded-xl p-2 shrink-0">
+                                        <Icon size={22} />
+                                    </div>
+                                    <span className="font-bold text-gray-700 text-sm">{label}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Credibilidad familiar (fusión de "Un Proyecto Familiar") */}
+                        <div className="flex items-center gap-3 bg-white rounded-full pr-5 pl-2 py-2 w-fit shadow-sm border border-gray-100">
+                            <img
+                                src={fotoFamilia}
+                                alt="Fundadores de Chispeando Ideas"
+                                width="40"
+                                height="40"
+                                loading="lazy"
+                                decoding="async"
+                                className="w-10 h-10 rounded-full object-cover object-top"
+                            />
+                            <p className="text-sm font-semibold text-gray-700">
+                                Un proyecto de <span className="text-primary">familia</span>, para tu familia
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Media */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="w-full md:w-1/2"
+                    >
+                        {/* TODO: reemplazar con foto real de un niño observando/experimentando de cerca */}
+                        <MediaPlaceholder
+                            alt="Niña observando con lupa un experimento de ciencia"
+                            label="Foto: niño explorando a su propio ritmo"
+                            ratio="4/3"
+                        />
+                    </motion.div>
                 </div>
             </div>
         </section>
