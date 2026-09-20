@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import TikTokIcon from './icons/TikTokIcon';
 
 const Footer = () => {
     return (
@@ -23,7 +24,7 @@ const Footer = () => {
                                 <Instagram size={20} />
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary-dark transition-colors">
-                                <Twitter size={20} />
+                                <TikTokIcon size={18} />
                             </a>
                         </div>
                     </div>
@@ -32,9 +33,9 @@ const Footer = () => {
                         <h4 className="text-xl font-bold mb-6">Enlaces Rápidos</h4>
                         <ul className="space-y-4">
                             <li><a href="#" className="text-gray-300 hover:text-accent transition-colors">Inicio</a></li>
-                            <li><a href="#solucion" className="text-gray-300 hover:text-accent transition-colors">Nuestra Metodología</a></li>
-                            <li><a href="#cursos" className="text-gray-300 hover:text-accent transition-colors">Cursos STEAM</a></li>
-                            <li><a href="#beneficios" className="text-gray-300 hover:text-accent transition-colors">Beneficios</a></li>
+                            <li><a href="#cada-nino" className="text-gray-300 hover:text-accent transition-colors">Nuestra Metodología</a></li>
+                            <li><a href="#programas" className="text-gray-300 hover:text-accent transition-colors">Cursos STEAM</a></li>
+                            <li><a href="#porque-nosotros" className="text-gray-300 hover:text-accent transition-colors">Beneficios</a></li>
                         </ul>
                     </div>
 

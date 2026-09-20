@@ -9,7 +9,6 @@ import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
 import Chatbot from './components/Chatbot';
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
       <Chatbot />
     </div>
   );

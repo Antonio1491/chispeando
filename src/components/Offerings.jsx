@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FlaskConical, Bot, Flower2, Sun } from 'lucide-react';
 import MediaPlaceholder from './MediaPlaceholder';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 import imgCiencia from '../assets/imagenes/curso_ciencia.webp';
 import imgRobotica from '../assets/imagenes/curso_robotica.webp';
 
@@ -101,6 +102,24 @@ const Offerings = () => {
                         );
                     })}
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-12 text-center"
+                >
+                    <p className="text-gray-600 mb-4">¿Ya sabes cuál programa es para tu hijo?</p>
+                    <a
+                        href="https://wa.me/529994519579"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 min-h-[44px] bg-accent hover:bg-orange-500 text-primary-dark text-base md:text-lg px-8 py-3 md:py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+                    >
+                        <WhatsAppIcon size={20} />
+                        Reservar lugar
+                    </a>
+                </motion.div>
             </div>
         </section>
     );
